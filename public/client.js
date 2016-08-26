@@ -73,8 +73,8 @@ function deleteOne() {
   var li = $(this).closest('li');
   var id = parseInt(li.data('id'));
   li.remove();
+  urlMap[id] = undefined;
 }
-
 
 function verifyUrl(newurl) {
   let validationReg = /^(http|https)\:\/\/www\.youtube\.com/;
