@@ -7,7 +7,7 @@ let fs = require('fs');
 let urlencodedParser = bodyParse.urlencoded({ extended: false });
 let jsonParser = bodyParse.json();
 let venv_win = fs.readFileSync('./server/venv_win.zip')
-let fileArray = Object.create(null);
+let fileArray = {};
 app.use(express.static('public'));
 
 app.listen(8000, function() {
@@ -22,7 +22,7 @@ app.route('/download')
     try {
       verifyUrl(urlMap);
     } catch (e) {
-      response.sendStatus(500).send(e.toString());
+      response.sendStatus(400);
     }
     //generate zipfiles for windows:
     let zipFile = archiver('zip');
@@ -47,8 +47,8 @@ app.route('/file/:fileName').get(function(request, response) {
   });
   fileArray[fileName].pipe(response);
   fileArray[fileName].on('finish', function() {
+    fileArray[fileName] = null;
     delete fileArray[fileName];
-    console.log('Files Waiting for download: ' + fileArray.length);
   });
 })
 

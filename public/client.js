@@ -72,10 +72,7 @@ function deleteOne() {
   // delete a single url
   var li = $(this).closest('li');
   var id = parseInt(li.data('id'));
-  console.log(id);
   li.remove();
-  delete urlMap[id];
-  console.log(urlMap);
 }
 
 
