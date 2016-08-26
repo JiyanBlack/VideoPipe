@@ -1,0 +1,34 @@
+{
+  "name": "video_pipe",
+  "version": "0.0.1",
+  "description": "A tool for downloading videos from websites.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiyanBlack/VideoPipe.git"
+  },
+  "keywords": [
+    "video",
+    "download",
+    "video",
+    "pipe",
+    "videopip"
+  ],
+  "author": "Yan Ji",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JiyanBlack/VideoPipe/issues"
+  },
+  "homepage": "https://github.com/JiyanBlack/VideoPipe#readme",
+  "dependencies": {
+    "archiver": "^1.0.1",
+    "body-parser": "^1.15.2",
+    "ecstatic": "^1.4.1",
+    "express": "^4.14.0",
+    "mime": "^1.3.4",
+    "promise": "^7.1.1"
+  }
+}
