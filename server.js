@@ -14,7 +14,7 @@ app.listen(8000, function() {
   console.log('Listening on port 8000...');
 });
 
-app.route('/download')
+app.route('/videopipe/download')
   .post(jsonParser, function(request, response) {
     // receive a json file, download zip file
     urlMap = request.body;
@@ -38,7 +38,7 @@ app.route('/download')
     response.send(fileName);
   });
 
-app.route('/file/:fileName').get(function(request, response) {
+app.route('/videopipe/file/:fileName').get(function(request, response) {
   let fileName = request.params.fileName;
   console.log("User downloading: " + fileName);
   response.set({
