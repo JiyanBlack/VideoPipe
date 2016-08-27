@@ -62,7 +62,7 @@ function download() {
     contentType: 'application/json',
     data: JSON.stringify(urlMap)
   }).done(function(fileName) {
-    window.open('/videopipe/file/' + fileName);
+    window.open('/file/' + fileName);
   }).fail(function(jqXHR, status, errorMessage) {
     showError(errorMessage);
   });
