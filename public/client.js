@@ -58,7 +58,7 @@ function download() {
   console.log('Start to download:' + urlMap.toString());
   $.ajax({
     type: 'POST',
-    url: '/videopipe/download',
+    url: '/download',
     contentType: 'application/json',
     data: JSON.stringify(urlMap)
   }).done(function(fileName) {
