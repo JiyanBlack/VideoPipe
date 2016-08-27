@@ -8,7 +8,7 @@ let urlencodedParser = bodyParse.urlencoded({ extended: false });
 let jsonParser = bodyParse.json();
 let venv_win = fs.readFileSync('./server/venv_win.zip')
 let fileArray = {};
-app.use(express.static('public'));
+app.use('/videopipe', express.static('public'));
 app.enable('trust proxy');
 app.listen(8000, function() {
   console.log('Listening on port 8000...');
