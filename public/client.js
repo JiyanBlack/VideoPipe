@@ -58,11 +58,11 @@ function download() {
   console.log('Start to download:' + urlMap.toString());
   $.ajax({
     type: 'POST',
-    url: '/download',
+    url: '/videopipe/download',
     contentType: 'application/json',
     data: JSON.stringify(urlMap)
   }).done(function(fileName) {
-    window.open('/file/' + fileName);
+    window.open('/videopipe/file/' + fileName);
   }).fail(function(jqXHR, status, errorMessage) {
     showError(errorMessage);
   });
